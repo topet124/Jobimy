@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   min-height: 100vh;
@@ -29,6 +29,11 @@ const Wrapper = styled.section`
     color: var(--primary-500);
     letter-spacing: var(--letter-spacing);
     margin-left: 0.25rem;
+  }
+  select {
+    margin-top: 10px;
+    width: 100%;
+    height: 35px;
   }
 `;
 export default Wrapper;

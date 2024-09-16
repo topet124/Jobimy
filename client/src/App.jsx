@@ -6,11 +6,15 @@ import {
   Login,
   DashboardLayout,
   Error,
-  Stats,
   AllJobs,
   Profile,
-  Admin,
 } from "./pages";
+
+import { action as registerAction } from "./pages/Register";
+import { action as loginAction } from "./pages/Login";
+import { loader as dashboardLoader } from "./pages/DashboardLayout";
+import { loader as allJobsLoader } from "./pages/AllJobs";
+import { action as profileAction } from "./pages/Profile";
 
 export const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem("darkTheme") === "true";
@@ -33,30 +37,28 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <Register />,
+        action: registerAction,
       },
       {
         path: "login",
         element: <Login />,
+        action: loginAction,
       },
       {
         path: "dashboard",
         element: <DashboardLayout />,
+        loader: dashboardLoader,
         children: [
           {
             index: true,
             element: <AllJobs />,
+            loader: allJobsLoader,
           },
-          {
-            path: "stats",
-            element: <Stats />,
-          },
+
           {
             path: "profile",
             element: <Profile />,
-          },
-          {
-            path: "admin",
-            element: <Admin />,
+            action: profileAction,
           },
         ],
       },
