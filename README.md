@@ -49,8 +49,9 @@ Ensure you have the following installed:
 ## Installation
 
 1.⁠ ⁠Clone the repository:
-   git clone https://github.com/your-repo-url.git
-   cd your-project-directory
+   git clone (https://github.com/topet124/Jobimy.git)
+   npm install
+   then cd into the client directory
    npm install
 
 ## Environment Variables Setup
@@ -63,7 +64,7 @@ MONGO_URL=mongodb+srv://topet124:london123,@jobimy.sr4i5.mongodb.net/?retryWrite
 JWT_KEY=secret
 
 ## Starting the Application
-
+cd root directory
 npm run dev
 
 ## Front-end Overview
