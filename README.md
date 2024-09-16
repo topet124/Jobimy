@@ -49,9 +49,13 @@ Ensure you have the following installed:
 ## Installation
 
 1.⁠ ⁠Clone the repository:
+
    git clone (https://github.com/topet124/Jobimy.git)
+   
    npm install
+   
    then cd into the client directory
+   
    npm install
 
 ## Environment Variables Setup
