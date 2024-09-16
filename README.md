@@ -65,6 +65,7 @@ PORT=5106
 NODE_ENV=development
 
 MONGO_URL=mongodb+srv://topet124:london123,@jobimy.sr4i5.mongodb.net/?retryWrites=true&w=majority&appName=Jobimy
+
 JWT_KEY=secret
 
 ## Starting the Application
