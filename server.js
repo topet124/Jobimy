@@ -7,6 +7,14 @@ import mongoose from "mongoose";
 import userRouter from "./routes/userRouter.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
 import cookieParser from "cookie-parser";
+const cors = require("cors");
+
+// Allow CORS from the frontend domain
+app.use(cors({
+  origin: 'https://jobimy-frontend.vercel.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true 
+}));
 
 // routes
 import authRouter from "./routes/authRouter.js";
