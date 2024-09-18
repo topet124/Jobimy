@@ -1,3 +1,4 @@
+const cors = require('cors');
 const cors = require("cors");
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -10,8 +11,12 @@ import { authenticateUser } from "./middleware/authMiddleware.js";
 import cookieParser from "cookie-parser";
 
 
-//cors
-app.use(cors());
+// Enable CORS for all routes
+app.use(cors({
+  origin: 'https://jobimy-frontend.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
 
 // routes
 import authRouter from "./routes/authRouter.js";
