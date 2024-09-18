@@ -1,3 +1,5 @@
+Live: https://jobimy-main.vercel.app/
+
 # Jobimy
 
 This project is a full-stack web application built using React for the front-end and MongoDB for the back-end. It includes dynamic routing, dashboard functionality, user authentication, and data management.
