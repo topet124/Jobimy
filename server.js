@@ -14,7 +14,7 @@ import cookieParser from "cookie-parser";
 app.use(cors({
   origin: 'https://jobimy-frontend.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true
+  credentials: true,
 }));
 
 // routes
