@@ -1,16 +1,13 @@
 // authMiddleware.js
-import mongoose from "mongoose"; 
-import {
-  UnauthenticatedError,
-  UnauthorizedError,
-  BadRequestError,
-} from "../errors/customErrors.js";
-// import { verifyJWT } from "../utils/tokenUtils.js";
+
+import { UnauthorizedError } from "../errors/customErrors.js";
+
 export const authenticateUser = (req, res, next) => {
+  // Bypass token verification for now
   req.user = { 
-    userId: "507f1f77bcf86cd799439011", // Replace with an actual user ID from your database
-    role: "user", // Assign a mock role, adjust as needed
-    testUser: true // Set this to true or false as needed for testing
+    userId: "507f1f77bcf86cd799439011", // Mock user ID, use a valid format (24-character hex string)
+    role: "user", // Mock role, adjust as needed
+    testUser: true // Mock flag for testing purposes
   };
 
   next();
