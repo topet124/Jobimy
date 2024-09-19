@@ -1,16 +1,17 @@
-import { StatusCodes } from "http-status-codes";
-import User from "../models/UserModel.js";
+import User from '../models/User.js';
+export const getCurrentUser = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user.userId);
 
-export const getCurrentUser = async (req, res) => {
-  const user = await User.findOne({ _id: req.user.userId });
-  const userWithoutPassword = user.toJSON();
-  res.status(StatusCodes.OK).json({ user: userWithoutPassword });
-};
+    // Check if the user exists
+    if (!user) {
+      // Handle the case where the user is not found
+      return res.status(404).json({ msg: 'User not found' });
+    }
 
-export const updateUser = async (req, res) => {
-  const obj = { ...req.body };
-  delete obj.password;
-  delete obj.confirmPassword;
-  const updatedUser = await User.findByIdAndUpdate(req.user.userId, obj);
-  res.status(StatusCodes.OK).json({ msg: "user updated" });
+    // Only call toJSON if the user exists
+    res.status(200).json({ user: user.toJSON() });
+  } catch (error) {
+    next(error);
+  }
 };
